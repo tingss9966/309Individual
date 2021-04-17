@@ -1,0 +1,72 @@
+
+
+.userinput{
+    position: fixed;
+    border: 1px solid black;
+    width: 20%;
+    top: 20%;
+    left: 40%;
+    height: 500px;
+    background-color: grey;
+    display: none;
+}
+
+th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 12.5%;
+}
+
+.content{
+    margin-bottom: 50px;
+    font-size: 0.5vh;
+
+}
+
+
+form{
+    margin: 30px;
+}
+
+button{
+    border-radius: 20%;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    width: 12.5vw;
+    height: 10vh;
+    display: block;
+}
+
+.pic{
+    border: 1px solid black;
+    display: none;
+}
+
+label{
+    border: 2px solid black;
+    border-radius: 20%;
+    color: gainsboro;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: black;
+
+}
+
+label:hover{
+    box-shadow: 3px 2px grey;
+}
+
+#masterDate{
+    border: 2px solid black;
+    min-height: 200px;
+    min-width: 50px;
+    max-width: 50%;
+}
+
+#create-form{
+    display: inline-block;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Library</title>
+
+    <!------- Loading JS scripts ------->
+    <!-- When loading JS scripts, considerations should be made regarding when
+         the DOM is being loaded, and when different scripts
+         depend on each other. Below are examples of a few different ways to load the scripts.
+
+     -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <!-- Load any CSS before the JS in case you need to access styles in your scripts. -->
+    <!-- <link rel="stylesheet" type="text/css" href="someStylesheet.css"> -->
+
+    <!-- If you don't use either 'async' or 'defer', the HTML parsing/DOM loading is blocked until the script is downloaded and executed. -->
+    <!-- Since it is the top script on the page, it will block
+      before loading everything under it (including the <body>).  -->
+    <script src="dom_load.js"></script>
+
+    <!-- 'defer' states that the script should be executed after the HTML is parsed.
+         If multiple scripts have 'defer', they are loaded one after the other.
+         This will guarantee execution order, and ensure that scripts that depend on each other load
+         in an order that will not cause errors. -->
+    <!-- First we load jquery from a Google CDN (content delivery network). -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script defer type="text/javascript" src='easy_scheduler.js'></script>
+    <script defer type="text/javascript" src='example.js'></script>
+
+    <script defer type="text/javascript" src='functions.js'></script>
+    <!--
+    - 'async' states that it is safe to download the script without blocking
+    HTML parsing, and execute  once downloaded (DOM loading, if not completed, pauses during script execution).
+    This allows for quicker loading of the DOM content while waiting for scripts to download.
+    Note that if multiple scripts are 'async', their order
+    of loading is *not* guaratneed, and async scripts may also be executed after
+    the 'DOMContentLoaded' event is fired (we make up for this in the dom_load_async.js file).
+    * General rule: don't use async on scripts that depend on each other. *
+     Often scripts like ads and analytics are loaded async since they don't depend
+     on other scipts.
+    -->
+    <script async type="text/javascript" src='dom_load_async.js'></script>
+
+</head>
+<body>
+<h3>Scheduler.js</h3>
+<br><p>&nbsp;&nbsp;&nbsp;&nbsp;This is Schedule.js library. The functions of this library is to create schedules for multiple projects and will have
+    a today calender that shows all the thing that should be done today.
+</p>
+<p>At this bottom part you can input the numbers of days of your project and the start date of your project by entering the date, month year. and the name of your project</p>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
