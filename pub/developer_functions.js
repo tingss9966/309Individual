@@ -1,3 +1,4 @@
+"use strict"
 //These functions are used for the developer to be able to add to their own code
 
 //returns a list of events for today
@@ -48,4 +49,22 @@ function getEvents(day, month){
     }
     return lst
 
+}
+
+function countEvents(){
+    let count = 0
+    const events = document.getElementsByClassName('event')
+    for (let k = 0; k < events.length; k++){
+        count++
+    }
+
+}
+
+function getInfo(){
+    const num_tables = document.getElementsByClassName('table').length
+    const num_event = countEvents()
+    let info = {
+        number_of_table : num_tables,
+        num_event: num_event
+    }
 }
