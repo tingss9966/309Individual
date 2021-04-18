@@ -3,9 +3,9 @@
 .userinput{
     position: fixed;
     border: 1px solid black;
-    width: 20%;
+    width: 33%;
     top: 20%;
-    left: 40%;
+    left: 33%;
     height: 500px;
     background-color: grey;
     display: none;

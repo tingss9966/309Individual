@@ -79,6 +79,7 @@ ScheduleGenerator.prototype={
         const opion3 = document.createElement('option')
         const submit = document.createElement('input')
         const numDays = document.createElement('input')
+        const quit = document.createElement('button')
         const day = document.createElement('h4')
 
         //creating a form to add a new schedule
@@ -200,12 +201,26 @@ ScheduleGenerator.prototype={
         div.className = 'userinput'
         input.type = "text"
         input.placeholder = "hello"
+        quit.innerText = 'cancel'
+        select.id = "repeat"
+        numDays.id = "num-days-to-repeat"
+        quit.onclick = function (){
+            const form = $$$(".userinput")
+            form.setDisplay('none')
+        }
 
         //Adding everything to the body
+        form.appendChild(document.createTextNode("Event Name: "))
         form.appendChild(input)
+        form.appendChild(document.createElement('br'))
+        form.appendChild(document.createTextNode("Repeat: "))
         form.appendChild(select)
+        form.appendChild(document.createElement('br'))
+        form.appendChild(document.createTextNode("Number of Days to repeat: "))
         form.appendChild(numDays)
+        form.appendChild(document.createElement('br'))
         form.appendChild(submit)
+        form.appendChild(quit)
 
 
         div.appendChild(day)

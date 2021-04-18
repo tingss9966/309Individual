@@ -68,3 +68,11 @@ function getInfo(){
         num_event: num_event
     }
 }
+
+function changeColor(color){
+    const table = document.getElementsByClassName('table')
+    for (let i = 0; i < table.length; i++){
+        table[i].style.color = color
+    }
+
+}

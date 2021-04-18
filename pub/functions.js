@@ -17,12 +17,16 @@ function processForm(e) {
     const ta = document.getElementsByClassName('table')
     const tableNum = parseInt(day.slice(1,index))
     const table = ta[tableNum]
-    const project = e.target.children[0]
-    let num_days = parseInt(e.target.children[2].value)
-    if (e.target.children[2].value === ""){
+    const project = document.getElementById('project')
+    if (project.value === ""){
+        alert("Please Enter a project name!")
+        return
+    }
+    let num_days = parseInt(document.getElementById('num-days-to-repeat').value)
+    if (document.getElementById('num-days-to-repeat').value === ""){
         num_days = Infinity
     }
-    switch (e.target.children[1].value){
+    switch (document.getElementById('repeat').value){
         //case for repeating it everyday
         case "day":
             console.log(table.value)
